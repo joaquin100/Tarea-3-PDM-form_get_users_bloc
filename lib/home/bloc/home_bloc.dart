@@ -64,7 +64,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   }
 
   // ignore: non_constant_identifier_names
-  Future _getAllFilterUsers(bool is_even_number) async {
+  Future _getAllFilterUsers(bool is_even) async {
     try {
       print("EJECUTÁNDOSE _getAllFilterUsers");
       Response response = await get(_link);
@@ -78,7 +78,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
             )
             .toList();
 
-        if (is_even_number) {
+        if (is_even) {
           this._userList =
               this._userList.where((element) => element.id % 2 == 0).toList();
         } else {
