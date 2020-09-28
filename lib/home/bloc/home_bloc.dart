@@ -33,9 +33,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
       print("Filter users");
       yield LoadingState();
+      await _getAllFilterUsers(event.props[0]);
 
       if (this._userList.isNotEmpty) {
-        await _getAllFilterUsers(event.props[0]);
         yield ShowUserState(userList: this._userList);
       } else {
         yield ErrorState(error: "No hay elementos por mostrar");
