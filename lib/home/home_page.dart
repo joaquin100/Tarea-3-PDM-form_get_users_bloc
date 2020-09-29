@@ -72,13 +72,16 @@ class _HomePageState extends State<HomePage> {
               return RefreshIndicator(
                 child: ListView.separated(
                   separatorBuilder: (BuildContext context, int index) =>
-                      Divider(),
+                      Divider(
+                    color: Colors.black,
+                    height: 15,
+                  ),
                   itemCount: state.userList.length,
                   itemBuilder: (BuildContext context, int index) {
                     return ListTile(
                       title: Text(state.userList[index].name),
                       subtitle: Text(
-                        'Company:${state.userList[index].company.name}\n Username:${state.userList[index].username}\n Street:${state.userList[index].address.street} \n Phone:${state.userList[index].phone} ',
+                        'Company:${state.userList[index].company.name}\nUsername:${state.userList[index].username}\nStreet:${state.userList[index].address.street}\n Phone:${state.userList[index].phone} ',
                       ),
                     );
                   },
