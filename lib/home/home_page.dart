@@ -81,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                     return ListTile(
                       title: Text(state.userList[index].name),
                       subtitle: Text(
-                        'Company:${state.userList[index].company.name}\nUsername:${state.userList[index].username}\nStreet:${state.userList[index].address.street}\n Phone:${state.userList[index].phone} ',
+                        'Company:${state.userList[index].company.name}\nUsername:${state.userList[index].username}\nStreet:${state.userList[index].address.street}\nPhone:${state.userList[index].phone} ',
                       ),
                     );
                   },
